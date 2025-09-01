@@ -13,9 +13,11 @@
             <th>ISBN</th>
             <th>Year</th>
         </tr>  
-        <tr th:each = "Book : ${Book}">
-            <td th:text="${Book.author} + ' ' + ${Book.title} +' ' + ${Book.isbn} +' ' + ${Book.publicationYear}"></td>
-                   
+        <tr th:each = "book : ${books}">
+            <td th:text="${book.author} "></td>
+            <td th:text="${book.title} "></td>  
+            <td th:text="${book.isbn} "></td>  
+            <td th:text=" ${book.publicationYear}"></td>             
         </tr>
      </table>      
 </body>
