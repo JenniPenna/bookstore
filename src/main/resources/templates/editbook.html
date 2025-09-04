@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Book</title>
+</head>
+<body>
+    <h1>Edit book</h1>
+    <form th:action="@{/save}" th:object="${book}" method="post">
+        <!-- piilotettu id jotta Spring tietää mitä kirjaa päivitetään -->
+        <input type="hidden" th:field="*{id}" />
+
+        <p>Title: <input type="text" th:field="*{title}" /></p>
+        <p>Author: <input type="text" th:field="*{author}" /></p>
+        <p>Year: <input type="text" th:field="*{publicationYear}" /></p>
+        <p>ISBN: <input type="text" th:field="*{isbn}" /></p>
+        <!-- <p>Price: <input type="text" th:field="*{price}" /></p> -->
+
+        <button type="submit">Save changes</button>
+    </form>
+</body>
+</html>
